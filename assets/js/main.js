@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Load Google Analytics after page load to improve performance
 const gtagScript = document.createElement('script');
-gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-CTVHPEPMS0';
+gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-2GML90396C';
 gtagScript.async = true;
 document.head.appendChild(gtagScript);
 
@@ -20,4 +20,4 @@ window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
 
-gtag('config', 'G-CTVHPEPMS0');
+gtag('config', 'G-2GML90396C');
