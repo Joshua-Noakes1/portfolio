@@ -1,10 +1,9 @@
 <script setup>
 import * as THREE from 'three';
+import FOG from 'vanta/dist/vanta.fog.min';
 
 onMounted(async () => {
-  if (import.meta.browser) {
-    const { default: CLOUDS } = await import("vanta/dist/vanta.clouds.min");
-    CLOUDS({
+    FOG({
       el: "#vantajs",
       mouseControls: true,
       touchControls: true,
@@ -13,7 +12,6 @@ onMounted(async () => {
       minWidth: 200.00,
       THREE: THREE
     });
-  }
 });
 </script>
 
