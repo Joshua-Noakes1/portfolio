@@ -1,6 +1,6 @@
 <script setup>
 import * as THREE from 'three';
-import FOG from 'vanta/dist/vanta.fog.min';
+import FOG from 'vanta/dist/vanta.birds.min';
 
 onMounted(async () => {
     FOG({
@@ -10,6 +10,7 @@ onMounted(async () => {
       gyroControls: false,
       minHeight: 200.00,
       minWidth: 200.00,
+      backgroundColor: 0x0f172a ,
       THREE: THREE
     });
 });
