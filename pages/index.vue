@@ -1,14 +1,15 @@
 <template>
-    <div>
-        <h1>:3</h1>
-        <NuxtLink to="/photos">Photos</NuxtLink>
-    </div>
+<div class="flex justify-center">
+    <p class="text-cream">Your text here</p>
+</div>
 </template>
 
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+.bg-cream {
+    background-color: #FDF5E6;
+}
+
+.text-cream {
+    color: #FFF8DC;
 }
 </style>

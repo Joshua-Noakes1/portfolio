@@ -1,16 +1,16 @@
 <script setup>
 import * as THREE from 'three';
-import FOG from 'vanta/dist/vanta.birds.min';
+import CLOUDS from 'vanta/dist/vanta.clouds.min';
 
 onMounted(async () => {
-    FOG({
+  CLOUDS({
       el: "#vantajs",
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
       minHeight: 200.00,
       minWidth: 200.00,
-      backgroundColor: 0x0f172a ,
+      // backgroundColor: 0x818cf8,
       THREE: THREE
     });
 });
