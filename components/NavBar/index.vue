@@ -16,7 +16,7 @@ const closeSidebar = () => {
         <UContainer>
             <UCard class="mt-5">
                 <template #header>
-                    <div class="flex justify-between">
+                    <div class="flex justify-between select-none">
                         <NuxtLink to="/">
                             <h1 class="font-semibold">Joshua Noakes</h1>
                         </NuxtLink>
@@ -34,7 +34,7 @@ const closeSidebar = () => {
 
             <!-- Slideover for mobile / vertical devices -->
             <USlideover v-model="isSidebarOpen">
-                <UCard class="flex flex-col flex-1" :ui="{ body: { base: 'flex-1' }, ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
+                <UCard class="flex flex-col flex-1 select-none" :ui="{ body: { base: 'flex-1' }, ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
                     <template #header>
                         <UButton color="gray" variant="ghost" class="-my-1 float-end" @click="isSidebarOpen = false">
                             <UIcon name="i-heroicons-x-mark-20-solid" class="w-5 h-5" />
