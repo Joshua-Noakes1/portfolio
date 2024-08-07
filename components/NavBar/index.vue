@@ -1,3 +1,16 @@
+<script setup>
+const isSidebarOpen = ref(false);
+const navBarLinks = [
+    { to: '/about', title: 'About Me' },
+    { to: '/photos', title: 'Photography' },
+    { to: '/blog', title: 'Blog' }
+];
+
+const closeSidebar = () => {
+    isSidebarOpen.value = false;
+}
+</script>
+
 <template>
     <UContainer>
         <UCard class="mt-5">
@@ -6,17 +19,36 @@
                     <NuxtLink to="/">
                         <h1 class="font-semibold">Joshua</h1>
                     </NuxtLink>
-                    <span>
-                        <DownloadCV />
-                        <!-- <UButton class="ml-1" :title="`Current Colour Prefrence: ${$colorMode.preference.toString().charAt(0).toUpperCase()}${$colorMode.preference.toString().slice(1).toLowerCase()}`" @click="switchColour()">
-                            <Icon :name="`heroicons:${$colorMode.preference === 'system' ? 'computer-desktop-20-solid' : $colorMode.value === 'dark' ? 'moon' : 'sun'}`" size="20px" />
-                        </UButton>
-                        <UButton v-if="isLoggedIn" class="ml-1" @click="signUserOut()" target="_blank" title="Log Out">
-                            <Icon name="solar:square-arrow-right-broken" size="20px" />
-                        </UButton> -->
+                    <span class="flex justify-evenly">
+                        <UIcon name="i-solar-hamburger-menu-linear" class="md:hidden text-slate-400 hover:text-slate-200 w-6 h-6" @click="isSidebarOpen = true" />
+
+                        <!-- Links -->
+                        <span v-for="(link, index) in navBarLinks" :key="index">
+                            <NavBarLink :to="link.to" :title="link.title" :needSpace="index !== navBarLinks.length - 1" />
+                        </span>
                     </span>
                 </div>
             </template>
         </UCard>
+
+        <!-- Slideover for mobile / vertical devices -->
+        <USlideover v-model="isSidebarOpen">
+            <UCard class="flex flex-col flex-1" :ui="{ body: { base: 'flex-1' }, ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
+                <template #header>
+                    <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="-my-1 float-end" @click="isSidebarOpen = false" />
+                </template>
+
+                <div class="p-4">
+                    <NavBarLink v-for="(link, index) in navBarLinks" :key="index" :to="link.to" :title="link.title" :isMobile="true" @closeSidebar="closeSidebar()"/>
+                </div>
+
+                <template #footer>
+                    <p class="text-slate-400">Hiya - Made with <span class="hover:text-pink-200 transition-colors duration-400">Love
+                            <UIcon name="i-mdi-cards-heart" class="ml-1 align-middle" />
+                        </span>
+                    </p>
+                </template>
+            </UCard>
+        </USlideover>
     </UContainer>
 </template>
