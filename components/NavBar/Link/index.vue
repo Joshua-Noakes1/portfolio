@@ -25,6 +25,6 @@ const closeSidebar = () => {
 
 <template>
     <NuxtLink :to="to" :class="linkClasses" @click="closeSidebar()">
-        <h2 class="font-semibold text-slate-400 hover:text-slate-200 transition-colors duration-400" :class="{ 'text-slate-200': pageRoute.path === to }">{{ title }}</h2>
+        <h2 :class="['font-semibold', { 'text-slate-200': pageRoute.path == to }, { 'text-slate-400': pageRoute.path !== to }, 'hover:text-slate-200', 'transition-colors', 'duration-400',]">{{ title }}</h2>
     </NuxtLink>
 </template>
