@@ -1,17 +1,19 @@
 <script setup>
 import * as THREE from 'three';
 import CLOUDS from 'vanta/dist/vanta.clouds.min';
-
-onMounted(async () => {
+onMounted(() => {
+  // vantajs
   CLOUDS({
-      el: "#vantajs",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      THREE: THREE
-    });
+    el: "#vantajs",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 5.00, // fixes peformance issues
+    scaleMobile: 2.00, // ^^
+    THREE: THREE
+  });
 });
 </script>
 
