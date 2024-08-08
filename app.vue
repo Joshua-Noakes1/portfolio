@@ -23,7 +23,7 @@ onMounted(() => {
     <NuxtLoadingIndicator />
     <NuxtRouteAnnouncer />
     <NavBar />
-    <div v-if="pageRoute.path !== '/'" class="pt-28" />
+    <div v-if="pageRoute.path !== '/'" class="pt-24" />
     <NuxtPage />
     <div id="vantajs" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -100;" />
   </div>
