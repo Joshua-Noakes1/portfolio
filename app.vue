@@ -1,4 +1,5 @@
 <script setup>
+const pageRoute = useRoute();
 import * as THREE from 'three';
 import CLOUDS from 'vanta/dist/vanta.clouds.min';
 onMounted(() => {
@@ -19,12 +20,13 @@ onMounted(() => {
 
 <template>
   <div>
-    <NavBar />
     <NuxtLoadingIndicator />
     <NuxtRouteAnnouncer />
+    <NavBar />
+    <div v-if="pageRoute.path !== '/'" class="pt-28" />
     <NuxtPage />
+    <div id="vantajs" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -100;" />
   </div>
-  <div id="vantajs" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -100;" />
 </template>
 
 <style>
