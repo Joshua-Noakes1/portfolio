@@ -1,6 +1,6 @@
 <script setup>
 useSeoMeta({
-    title: "Blog - Joshua Noakes",
+    title: "Projects - Joshua Noakes",
     description: "I'm a self-taught developer, homelabber and photographer.",
     url: "https://www.joshuanoakes.co.uk/blog"
 });

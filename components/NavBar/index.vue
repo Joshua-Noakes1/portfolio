@@ -3,7 +3,7 @@ const isSidebarOpen = ref(false);
 const navBarLinks = [
     { to: '/about', title: 'About Me' },
     { to: '/photos', title: 'Photography' },
-    { to: '/blog', title: 'Blog' }
+    { to: '/projects', title: 'Projects' }
 ];
 
 const closeSidebar = () => {
