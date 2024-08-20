@@ -12,7 +12,7 @@ const test = ref(false);
     <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 pl-4 pr-4">
         <UCard class="m-1">
             <USkeleton v-if="!test" class="h-60" />
-            <CldImage v-if="test" src="jypd6x5xfkaplzuw0wur" class="h-60 rounded" alt="My Awesome Image" />
+            <!-- <CldImage v-if="test" src="jypd6x5xfkaplzuw0wur" class="h-60 rounded" alt="My Awesome Image" /> -->
             <span class="text-gray-400 mt-2 flex items-center">
                 <UIcon name="i-bi-chat-right-quote" class="text-2xl" />
                 <span class="ml-2">Sierra County, CA (2024)</span>
